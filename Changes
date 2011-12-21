@@ -1,6 +1,8 @@
 Revision history for autodie-variables
 
 {{$NEXT}}
+
+0.002     2011-12-21 16:10:19 Europe/Amsterdam
           Made autodie::variables work on perl 5.10-5.12 too (previously only worked on 5.14)
 
 0.001     2011-11-23 00:09:51 Europe/Amsterdam
