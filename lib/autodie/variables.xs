@@ -18,6 +18,18 @@
 #define PL_delaymagic_egid PL_egid
 #endif
 
+#if defined(HAS_GETGROUPS) || defined(HAS_SETGROUPS)
+#  ifdef I_GRP
+#    include <grp.h>
+#  endif
+#endif
+
+#if defined(HAS_SETGROUPS)
+#  ifndef NGROUPS
+#    define NGROUPS 32
+#  endif
+#endif
+
 static int autodie_variables(pTHX) {
 	SV* val = cophh_fetch_pvs(CopHINTHASH_get(PL_curcop), "autodie_variables", 0);
 	if (val != &PL_sv_placeholder)
