@@ -45,7 +45,9 @@ static int new_magic_set(pTHX_ SV *sv, MAGIC *mg) {
 	MAGIC *tmg;
 	int ret = 0;
 
+#ifdef PERL_ARGS_ASSERT_MAGIC_SET
 	PERL_ARGS_ASSERT_MAGIC_SET;
+#endif
 
 	if (!autodie_variables(aTHX))
 		return Perl_magic_set(aTHX_ sv, mg);
