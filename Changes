@@ -1,6 +1,7 @@
 Revision history for autodie-variables
 
 {{$NEXT}}
+          Fix errno issues on some builds
 
 0.003     2012-05-12 14:33:26 Europe/Amsterdam
           Fixed for new cache-less behavior on 5.15.8+
