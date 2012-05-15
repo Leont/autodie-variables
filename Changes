@@ -1,6 +1,8 @@
 Revision history for autodie-variables
 
 {{$NEXT}}
+
+0.004     2012-05-15 15:25:07 Europe/Amsterdam
           Fix errno issues on some builds
           Set locale "C" in tests
 
