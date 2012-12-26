@@ -18,10 +18,10 @@ if ($> == 0) {
 }
 SKIP: {
 	skip 'Old darwin doesn\'t have usable setr[ug]id', 2 if $^O eq 'darwin' and (uname)[2] lt '9';
-	throws_ok { $< = 0 } qr/setruid\(0\) failed: Operation not permitted/, 'Setting $< throws';
-	throws_ok { $( = 0 } qr/setrgid\(0\) failed: Operation not permitted/, 'Setting $( throws';
+	dies_ok { $< = 0 } 'Setting $< dies';
+	dies_ok { $( = 0 } 'Setting $( dies';
 }
-throws_ok { $> = 0 } qr/seteuid\(0\) failed: Operation not permitted/, 'Setting $> throws';
-throws_ok { $) = 0 } qr/setegid\(0\) failed: Operation not permitted/, 'Setting $) throws';
+dies_ok { $> = 0 } 'Setting $> dies';
+dies_ok { $) = 0 } 'Setting $) dies';
 
 done_testing();
